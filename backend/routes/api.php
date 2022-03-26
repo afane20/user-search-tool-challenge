@@ -24,3 +24,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('albums', [AlbumController::class, 'albums']);
 Route::get('photos', [PhotoController::class, 'photos']);
 Route::get('users', [UserController::class, 'users']);
+
+Route::get('allData', [UserController::class, 'allData']);

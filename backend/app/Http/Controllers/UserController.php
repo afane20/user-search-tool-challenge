@@ -12,4 +12,10 @@ class UserController extends Controller
         return response()->json($users);
     }
 
+    public function allData(){
+        $users = User::with('albums','albums.photos')
+        ->get();
+        return response()->json($users);
+    }
+
 }
