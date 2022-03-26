@@ -17,4 +17,8 @@ class Photo extends Model
     ];
 
     public $timestamps = false;
+
+    public function album(){
+        return $this->hasOne(Album::class, 'id', 'albumId');
+    }
 }

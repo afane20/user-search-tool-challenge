@@ -15,4 +15,13 @@ class Album extends Model
     ];
 
     public $timestamps = false;
+
+    public function user(){
+        return $this->hasOne(User::class, 'id', 'userId');
+    }
+
+    public function photos(){
+        return $this->hasMany(Photo::class, 'albumId', 'id');
+    }
+
 }

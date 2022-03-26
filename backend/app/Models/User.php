@@ -25,4 +25,8 @@ class User extends Model
     ];
 
     public $timestamps = false;
+
+    public function albums(){
+        return $this->hasMany(Album::class, 'userId', 'id');
+    }
 }
