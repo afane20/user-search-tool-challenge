@@ -1,6 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import CadenceLabs from '../CadenceLabs';
 import { BrowserRouter } from "react-router-dom"
+import '@testing-library/jest-dom';
 
 const MockCadenceLabs = () => {
     return (
@@ -17,11 +18,11 @@ const searchUsers = (users) => {
     })
 }
 
-it('should be able to type into input', () => {
+it('should be able to type into input', async () => {
     render(
-        <CadenceLabs />
+        <MockCadenceLabs />
     );
     // searchUsers(["Ervin Howell"]);
-    const divElement = screen.queryAllByText(/Ervin Howell/i);
+    const divElement = await screen.queryAllByText(/Ervin Howell/i);
     expect(divElement.length).toBe(0)
 });

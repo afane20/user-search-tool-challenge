@@ -6,27 +6,11 @@ import axios from 'utils/axios';
 //components
 import CircularProgress from '@mui/material/CircularProgress';
 import DialogShare from './components/DialogShare/DialogShare';
+import CardUser from './components/CardUser/CardUser'
 //icons
 import { GoSearch } from 'react-icons/go';
 //images
-import no_image from 'assets/images/no_image.jpg';
 import { TextField, Button } from '@mui/material';
-
-const UserCard = (props) => {
-    const { user } = props;
-    const { thumbnailUrl } = user?.albums[0]?.photos[0];
-    return (
-        <div className={styles.card_candence}>
-            <img className={styles.card_image} src={thumbnailUrl? thumbnailUrl : no_image} alt={user.name} />
-            <div className={styles.card_content}>
-                <span className={styles.card_title}>{user.name}</span>
-                <span>{user.company ? user.company.name : ''}</span>
-                <span><a className={styles.link} href={user.website}>{user.website}</a></span>
-                <span>{user.albums.length > 0 ? user.albums.length + " Albums" : ''}</span>
-            </div>
-        </div>
-    );
-}
 
 const CadenceLabs = (props) => {
 
@@ -89,7 +73,7 @@ const CadenceLabs = (props) => {
             {users ? (
                 <div className={styles.list}>
                     {users && users.map(user => (
-                        <UserCard user={user} key={user.id} />
+                        <CardUser user={user} key={user.id} />
                     ))}
                 </div>
             ) : null}
