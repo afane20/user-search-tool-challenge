@@ -16,7 +16,9 @@ const AppRouter = () => {
     return (
         <>
             <Routes>
-                <Route exact path="/" element={<CadenceLabs />} />
+                <Route path="/" element={<CadenceLabs />} >
+                    <Route path=":search" element={<CadenceLabs />} />
+                </Route>
             </Routes>
         </>
     );

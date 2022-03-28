@@ -14,7 +14,8 @@
     background: #FFFFFF;
     height: 209px;
     /* background-color: red; */
-    gap: 36px;
+    gap: 25px;
+    padding: 10px;
 }
 .cont_search{
     max-width: 281px;
@@ -64,10 +65,14 @@
     justify-content: center;
     align-items: center;
     gap: 50px;
+    padding: 15px;
 }
 .card_image{
     width: 123px;
     height: 123px
+}
+.card_title{
+    font-weight: 600;
 }
 .card_content{
     width: 100%;
@@ -76,4 +81,15 @@
     flex-direction: column;
     color: #224E83;
     font: normal normal normal 16px/22px Open Sans;
+}
+.link{
+    color: #224E83;
+    font: normal normal normal 16px/22px Open Sans;
+}
+
+.cont_spinner{
+    padding: 20px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
